@@ -1,6 +1,6 @@
-# The Basement Doctor template
+# Sure Dry template
 
-Converting The Basement Doctor's website to new design from Adobe XD design spec
+Converting Sure Dry's website to new design from Adobe XD design spec
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ Converting The Basement Doctor's website to new design from Adobe XD design spec
 **Clone the project**
 
 ```bash
-  git clone https://github.com/IamStephan/sure_dry_template_v2 project-name
+  git clone https://github.com/bs-production/sure-dry-template project-name
 ```
 
 **Go to the project directory**
