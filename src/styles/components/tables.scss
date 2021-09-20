@@ -1,0 +1,13 @@
+table {
+  @apply ring-opacity-0 #{!important};
+
+  &.checklist {
+    * {
+      @apply text-center;
+    }
+
+    td {
+      @apply align-middle #{!important};
+    }
+  }
+}

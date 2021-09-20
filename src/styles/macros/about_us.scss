@@ -1,0 +1,54 @@
+@import "../utils/avoid_collapse.scss";
+
+/**
+ * NOTE:
+ * ======
+ * This section uses foundations old grid system and its based on FLOATS!!!!!!!
+ * I'll fixing this by overriding dome of the styles
+ */
+.about-the-owner.about-the-owner.about-the-owner.about-the-owner {
+  @include avoidCollapse();
+  @apply bg-primary rounded-md px-8 py-0 relative grid grid-cols-12 gap-6
+    md:grid-cols-1
+    sm:px-6;
+
+  &::before {
+    @apply hidden;
+  }
+
+  &::after {
+    @apply hidden;
+  }
+
+  .text-photo {
+    @apply hidden md:block;
+  }
+
+  .owner-text {
+    @apply float-none w-auto col-span-8 col-start-1 px-0
+      md:col-span-1;
+    * {
+      @apply text-white;
+    }
+  }
+  .owner-photo {
+    @apply float-none w-auto col-span-4 block
+      md:hidden;
+  }
+}
+
+/**
+ * This is the first div block containing the
+ * image
+ */
+.row.about-section.bg-lt-blue {
+  @apply overflow-hidden rounded-md;
+
+  div:first-child {
+    @apply -mx-8 mb-6 #{!important};
+
+    img {
+      @apply w-full h-auto;
+    }
+  }
+}

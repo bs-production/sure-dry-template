@@ -1,0 +1,115 @@
+@import "../utils/reset_list_styles.scss";
+
+/**
+  * NOTE
+  * ======
+  * The entire markup for this page is just wrong!
+  */
+
+.videos_index {
+  .video_featured {
+    @apply mb-16;
+
+    .video_featured_video {
+      @apply aspect-w-16 aspect-h-9;
+
+      > * {
+        @apply hidden;
+      }
+
+      iframe {
+        @apply block;
+      }
+
+      .social-share-inline {
+        @apply block;
+
+        ul {
+          @include resetListStyles();
+          @apply flex justify-end -bottom-4 right-0 absolute transform translate-y-full my-0 w-full;
+        }
+      }
+    }
+  }
+
+  .video_playlists {
+    // Just make it stand out a bit more
+    h3 {
+      @apply font-bold clear-both;
+    }
+
+    .playlist_row {
+      @apply -mx-3;
+
+      .playlist_item {
+        @apply bg-primary bg-opacity-10 m-3 float-left w-[calc(33%-24px)] hover:bg-opacity-100 ring-1 ring-primary rounded-md relative transition duration-200
+          md:w-[calc(50%-24px)]
+          sm:w-[calc(100%-24px)];
+
+        &:hover {
+          .playlist_item_title {
+            a {
+              @apply text-white;
+            }
+          }
+        }
+
+        > a {
+          @apply block h-[125px];
+
+          .playlist_item_thumbnail {
+            @apply absolute inset-0 w-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-10;
+          }
+        }
+
+        .playlist_item_title {
+          @apply absolute inset-0 flex justify-center items-center flex-col pointer-events-none;
+
+          a {
+            @apply text-primary no-underline text-lg font-bold block max-w-[175px] text-center transition duration-200;
+          }
+        }
+      }
+    }
+
+    /**
+      * NOTE
+      * ======
+      * The layout could be handled better if the
+      * rows weren't hard coded in the markup
+      *
+      * This seems like only place where floats are
+      * actually useful for grid layouts
+      */
+    .video_playlist_row {
+      @apply relative -mx-3;
+
+      .video_playlist_item {
+        // Third calculations are unaccurate and can sometimes be unalighed
+        @apply float-left w-[calc(33%-24px)] m-3 bg-gray-50 ring-1 ring-gray-900 ring-opacity-10 rounded-md
+          md:w-[calc(50%-24px)]
+          sm:w-[calc(100%-24px)];
+
+        .video_playlist_item_thumbnail {
+          @apply rounded-b-none w-full;
+        }
+
+        .video_playlist_item_title {
+          a {
+            @apply block line-clamp-1 font-bold text-lg no-underline mx-4 my-4;
+          }
+        }
+      }
+    }
+  }
+
+  .paginator {
+    @apply clear-both;
+  }
+}
+
+.video_details {
+  .video_details_video {
+    @apply aspect-w-16 aspect-h-9;
+  }
+}

@@ -1,0 +1,3 @@
+@function calculateFractionWidth($fration: 1, $width) {
+  @return #{$width * $fration}px;
+}

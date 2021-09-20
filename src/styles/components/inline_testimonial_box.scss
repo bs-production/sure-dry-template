@@ -1,0 +1,18 @@
+.inline-testimonial-box.inline-testimonial-box.inline-testimonial-box {
+  ul {
+    li {
+      @apply pl-0;
+      &::before {
+        @apply hidden;
+      }
+    }
+  }
+
+  * {
+    @apply font-sans;
+  }
+
+  a {
+    @apply text-primary font-bold;
+  }
+}

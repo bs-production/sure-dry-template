@@ -1,0 +1,102 @@
+.content-base {
+  @apply max-w-screen-xl px-16 mx-auto items-start gap-x-16 gap-y-16
+    xl:grid-cols-1
+    md:px-8;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+
+  .side-nav {
+    @apply sticky top-4
+      xl:static xl:row-start-2;
+
+    .side-nav-heading {
+      @apply text-primary uppercase font-bold cursor-pointer hover:underline;
+    }
+
+    .side-nav-separator {
+      @apply border-primary my-4;
+    }
+
+    .side-nav-container {
+      .side-nav-item-container {
+        @apply mb-2;
+        .side-nav-item {
+          @apply text-primary cursor-pointer hover:underline;
+        }
+      }
+    }
+  }
+
+  .article {
+    // Use prose utility to have auto styles for text based content
+    // Usefull especially if the content is unknown
+    @apply prose max-w-none
+      md:prose-sm;
+
+    // Maybe change?
+    // The text on mobile seems way to big
+    h1 {
+      @apply sm:text-2xl;
+    }
+
+    .floating-image {
+      @apply flex justify-center float-right max-w-full h-auto
+        md:float-none md:ml-0 md:mx-auto md:my-6;
+    }
+
+    .responsive-blocks {
+      $block-clamp: 300;
+      @apply grid gap-x-8;
+      grid-template-columns: repeat(auto-fill, minmax(#{$block-clamp}px, 1fr));
+    }
+
+    .explainer-container {
+      .explainer-img-container {
+        @apply aspect-w-16 aspect-h-12 mb-12 relative;
+      }
+    }
+
+    .floating-right.floating-right.floating-right {
+      @apply float-right my-0 mx-0 ml-4 mb-4
+        md:float-none md:ml-0 md:mx-auto md:my-6;
+    }
+
+    .showcase-card-video-container {
+      @apply w-8
+        md:w-auto;
+
+      .showcase-card-video {
+        @apply aspect-w-16 aspect-h-9;
+      }
+
+      .showcase-card-video-body {
+        @apply mx-4 my-3;
+
+        .showcase-card-video-title {
+          @apply text-lg font-bold mb-2 text-primary;
+        }
+
+        .showcase-card-video-related-container {
+          @apply grid grid-cols-2 gap-x-4;
+        }
+      }
+    }
+
+    .related-pages-container {
+      @apply shadow-xl border border-gray-200 bg-gray-50 rounded-md px-8 py-4 flex
+        lg:flex-col;
+
+      .related-pages-body {
+        @apply flex-1;
+        .related-pages-heading {
+          @apply text-2xl text-primary font-bold;
+        }
+      }
+
+      .related-pages-cta-container {
+        @apply self-end justify-self-end
+          sm:self-start sm:mt-2;
+      }
+    }
+  }
+}

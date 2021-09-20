@@ -1,0 +1,56 @@
+.contact_form.us {
+  @apply sm:w-full;
+
+  #contact_form {
+    h1 {
+      @apply text-center;
+    }
+
+    .bar {
+      @apply font-sans mb-6 text-base text-gray-600 text-center;
+    }
+
+    .step {
+      @apply relative border-none ring-1 ring-gray-900 ring-opacity-10 rounded-md pb-[1px]
+        sm:w-full;
+
+      &.current {
+        @apply shadow-xl ring-primary;
+
+        .title {
+          @apply bg-primary text-white;
+        }
+      }
+
+      .title {
+        @apply border-b border-gray-900 border-opacity-10 bg-gray-50 text-gray-700 px-4 py-3 text-lg;
+      }
+
+      .form_fields {
+        @apply px-4 py-3;
+
+        label {
+          @apply block float-none text-xs w-full;
+        }
+
+        input {
+          @apply block float-none w-full mb-6;
+        }
+
+        br {
+          @apply hidden;
+        }
+
+        textarea {
+          @apply w-full block float-none;
+        }
+      }
+
+      // This can a button or input
+      // Why?.... ¯\_(ツ)_/¯
+      .next {
+        @apply block rounded-md float-none w-[calc(100%-32px)] mx-4 px-0 py-2 mb-6 appearance-none bg-primary text-white font-semibold ring-primary cursor-pointer;
+      }
+    }
+  }
+}

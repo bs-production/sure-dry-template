@@ -1,0 +1,55 @@
+/**
+ * Not entirely sure if this is a component
+ * but this is here just to fix the styling
+ */
+
+.video-homepage.video-homepage.video-homepage {
+  @apply rounded-md shadow-xl font-sans;
+
+  .main-video-wrapper {
+    @apply ml-0 mt-0;
+
+    .feat-thumb {
+      @apply float-none aspect-w-16 aspect-h-12 w-full ml-0;
+
+      img {
+        @apply w-full h-auto rounded-b-none;
+      }
+
+      .item-bigplaybtn {
+        @apply left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2;
+      }
+    }
+
+    .feat-details {
+      @apply float-none w-auto mx-4;
+
+      .other-cvideos {
+        @apply flex;
+        .video-li {
+          @apply pl-0;
+
+          &::before {
+            @apply hidden;
+          }
+
+          img {
+            @apply rounded-none;
+          }
+        }
+      }
+    }
+  }
+
+  .video-top {
+    @apply bg-gray-900;
+
+    .video-count {
+      @apply font-sans no-underline p-0;
+
+      a {
+        @apply no-underline font-semibold p-[10px] block;
+      }
+    }
+  }
+}

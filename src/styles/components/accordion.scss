@@ -1,0 +1,52 @@
+.accordion.accordion.accordion {
+  @apply my-0 ring-1 ring-gray-900 ring-opacity-10 rounded-md overflow-hidden;
+
+  .accordion-navigation {
+    @apply pl-0 list-none my-0;
+
+    &.active {
+      > a {
+        &::after {
+          @apply transform -translate-y-1/2;
+        }
+      }
+
+      .content {
+        @apply block;
+      }
+    }
+
+    &::before {
+      display: none;
+    }
+
+    // Heading / Toggle
+    &:last-child > a {
+      @apply border-b-0;
+    }
+
+    > a {
+      @apply relative no-underline bg-gray-50 hover:bg-gray-100 block mt-0 border-b mb-0 px-8 py-4;
+
+      &::after {
+        @apply absolute transition duration-150 right-6 top-1/2 transform -translate-y-1/2 -rotate-90 w-6 h-6;
+
+        content: "";
+        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.34317 7.75732L4.92896 9.17154L12 16.2426L19.0711 9.17157L17.6569 7.75735L12 13.4142L6.34317 7.75732Z' fill='currentColor' /%3E%3C/svg%3E");
+      }
+
+      * {
+        @apply mt-0 mb-0 no-underline;
+      }
+    }
+
+    // accordion content
+    &:last-child > .content {
+      @apply border-t border-b-0;
+    }
+
+    .content {
+      @apply mb-0 py-4 px-4 border-b hidden;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@import "../utils/reset_list_styles.scss";
+
+.press_release_index {
+  .pr_items {
+    @apply mb-4;
+
+    .pr_item {
+      @apply grid gap-6 items-center grid-cols-[125px,1fr] border-b border-gray-900 border-opacity-10 py-4 px-4
+        sm:grid-cols-1;
+
+      &:nth-child(2n) {
+        @apply bg-gray-50;
+      }
+
+      .pr_thumbnail {
+      }
+
+      .pr_item_details {
+        &:only-child {
+          @apply col-span-2;
+        }
+
+        .pr_headline {
+          a {
+            @apply font-semibold no-underline text-xl line-clamp-1 mb-2;
+          }
+        }
+        .pr_summary {
+          @apply line-clamp-2 mb-1;
+        }
+
+        .pr_link {
+          a {
+            @apply text-sm text-primary;
+          }
+        }
+      }
+    }
+  }
+
+  .pr_summary {
+    .pr_total {
+      @apply font-bold;
+    }
+  }
+}
+
+// press release item pages do not have a wrapper class name except for module
+// Im using it know but this should change
+.module {
+  .pr_contact_box {
+    @apply float-right ring-1 ring-gray-900 ring-opacity-10 rounded-md overflow-hidden ml-4 mb-4 w-80
+      sm:float-none sm:ml-0 sm:w-full;
+
+    // The title
+    > h2 {
+      @apply my-0 py-2 px-4 bg-gray-100 border-b border-gray-900 border-opacity-10;
+    }
+
+    .pr_contact_info {
+      @apply px-4 py-2;
+      a {
+        @apply text-primary text-sm;
+      }
+
+      p {
+        @apply my-0;
+      }
+    }
+
+    .social-share-inline {
+      ul {
+        @include resetListStyles();
+        @apply flex my-0 mt-4
+          sm:space-x-4;
+      }
+    }
+  }
+
+  .pr_location_date {
+    @apply font-bold;
+  }
+
+  // Leave the content styling to prose
+  // There is video elements in some of the posts and they have unrelaiable classes with a fixed width
+  .pr_content {
+  }
+}

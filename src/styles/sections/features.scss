@@ -1,0 +1,133 @@
+@import "../utils/breakpoints.vars.scss";
+
+.features {
+  background-color: #f5f5f5;
+
+  .features-card-container {
+    $screen-xl: 1500;
+    @apply items-stretch mb-16 justify-items-stretch;
+
+    display: grid;
+    grid-template-columns: auto minmax(#{$screen-md}px, #{$screen-xl}px) auto;
+    grid-template-rows: 1fr 1fr;
+
+    @screen lg {
+      grid-template-columns: 1fr;
+      grid-template-rows: 175px auto;
+    }
+
+    .features-card-bg-white {
+      @apply col-start-1 col-end-4 row-start-1 bg-white;
+    }
+
+    .features-card-bg-reset {
+      @apply col-start-1 col-end-4 row-start-2;
+    }
+
+    .features-card {
+      @apply shadow-2xl row-start-1 row-end-3 col-start-2 col-end-3 mx-16
+        md:mx-8;
+      background-color: #231f20;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      grid-template-rows: 1fr auto;
+
+      @screen lg {
+        grid-template-columns: 1fr;
+        grid-template-rows: 175px auto auto;
+      }
+
+      .featured-card-background-image {
+        @apply relative col-start-1 row-start-1 row-end-3;
+      }
+
+      .feautures-card-main-image {
+        @apply relative col-start-2 row-start-1 row-end-3
+          lg:row-start-1 lg:row-end-2 lg:col-start-1 lg:col-end-2;
+      }
+
+      .featured-card-content {
+        @apply z-10 col-start-1 row-start-1 py-20 px-11
+          lg:col-start-1 lg:col-end-2 lg:row-start-2 lg:row-end-3
+          lg:py-12 lg:px-8
+          md:py-10 
+          sm:px-4 sm:py-6;
+
+        .featured-card-content-heading {
+          @apply mb-5 text-3xl font-bold text-white
+            md:text-2xl md:mb-3
+            sm:text-lg sm:mb-2;
+        }
+
+        .featured-card-content-body {
+          @apply text-xl text-white
+            md:text-base md:leading-loose
+            sm:text-xs sm:leading-loose;
+        }
+      }
+
+      .featured-card-button {
+        @apply row-start-2 col-start-1 px-11 py-4 text-white z-10 hover:bg-primary cursor-pointer
+          lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4 lg:py-3 lg:px-8
+          sm:px-4 sm:py-3;
+        background-color: #231f20;
+
+        .featured-card-button-text {
+          @apply text-sm font-semibold
+            md:text-xs;
+        }
+      }
+    }
+  }
+
+  .featured-body-container {
+    @apply max-w-screen-xl mx-auto
+      mb-16 px-16 md:px-8;
+
+    .featured-body-text {
+      @apply text-2xl font-light leading-loose
+      lg:text-xl lg:leading-loose
+      md:text-base md:leading-relaxed;
+    }
+  }
+
+  .featured-item-list {
+    @apply grid grid-cols-4 mx-auto max-w-screen-2xl justify-items-center pb-24 px-16 gap-x-6 gap-y-10
+      xl:grid-cols-2
+      md:px-8 md:pb-16
+      sm:grid-cols-1 sm:place-items-start;
+
+    .feautured-item {
+      @apply grid grid-cols-1 sm:gap-x-2
+        sm:place-items-center;
+      max-width: 280px;
+
+      @screen sm {
+        grid-template-columns: auto 1fr;
+      }
+
+      .featured-item-icon-container {
+        @apply sm:mr-4;
+
+        .featured-item-icon {
+          @apply h-16 mb-4
+            sm:mb-0 sm:h-auto sm:w-12;
+        }
+      }
+
+      .featured-item-content {
+        .featured-item-title {
+          @apply mb-2 text-2xl font-bold
+            md:text-xl
+            sm:text-base sm:mb-0;
+        }
+
+        .featured-item-subtitle {
+          @apply text-xl
+            md:text-base
+            sm:text-xs;
+        }
+      }
+    }
+  }
+}

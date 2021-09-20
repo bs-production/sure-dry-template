@@ -1,0 +1,65 @@
+/**
+ * NOTE:
+ * =======
+ * These seems to be alot of inline ID styles
+ * instead of trying to override it I'll just
+ * try to keep it the same as the old one with
+ * some elements of the new look and feel
+ */
+.opinion {
+  #opinion_form {
+    table {
+      @apply w-full max-w-full text-gray-900 table table-fixed;
+
+      tbody {
+        @apply ring-1 ring-gray-900 ring-opacity-10 rounded-md table-row-group;
+
+        tr {
+          @apply table-row;
+
+          &:nth-of-type(2n) {
+            @apply bg-gray-50;
+          }
+
+          td {
+            @apply py-2 px-3 table-cell;
+
+            label {
+              @apply block cursor-pointer;
+            }
+
+            input {
+              @apply rounded-md border-none ring-1 ring-gray-900 ring-opacity-25;
+            }
+
+            textarea {
+              @apply w-full ring-1 ring-gray-900 ring-opacity-25 rounded-md p-2;
+            }
+
+            select {
+              @apply rounded-md border-none ring-1 ring-gray-900 ring-opacity-25;
+            }
+
+            #submit {
+              @apply rounded-md font-sans font-semibold block h-auto px-6 py-3 bg-primary hover:bg-opacity-95;
+            }
+
+            // Another table
+            .opinion_radio_input {
+              @apply bg-white table-auto w-full table
+                sm:table-fixed;
+
+              input[type="radio"] {
+                @apply ring-0;
+              }
+
+              .word-scale {
+                @apply sm:hidden;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

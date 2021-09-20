@@ -1,0 +1,9 @@
+@import "../utils/reset_list_styles.scss";
+
+.social-share-inline.social-share-inline.social-share-inline {
+  ul {
+    @include resetListStyles();
+    @apply flex my-0 mt-4
+      sm:space-x-4;
+  }
+}

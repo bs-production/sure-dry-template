@@ -1,0 +1,132 @@
+@import "../utils/reset_list_styles.scss";
+
+.blog_index {
+  // The search box ets to small on 319px to input anything so it clamps the width and causes with the layout
+  #search_box {
+    form {
+      @apply flex justify-end items-center mb-4
+        sm:justify-start sm:flex-wrap;
+
+      #search_box_input {
+        @apply ring-1 ring-gray-900 ring-opacity-10 px-4 py-2 rounded-l-md block;
+      }
+
+      #search_box_submit {
+        @apply px-4 py-2 block rounded-none rounded-r-md ring-1 ring-primary;
+      }
+    }
+  }
+
+  // Then what is the point of this class
+  .blog_list {
+  }
+
+  .blog_items {
+    @apply flex flex-col mb-4;
+
+    .blog_item {
+      @apply grid gap-6 items-center grid-cols-[250px,1fr] border-gray-900 border-b border-opacity-10 p-4
+        sm:grid-cols-1;
+
+      &.blog_most_recent {
+        .blog_most_recent_header {
+          @apply block #{!important};
+          @apply col-span-2 bg-gray-900 py-4 px-4 text-white text-2xl font-bold rounded-t-md
+            sm:col-span-1;
+        }
+
+        .blog_thumbnail {
+          @apply row-start-2;
+        }
+
+        .blog_item_details {
+          @apply row-start-2
+            sm:row-start-3;
+        }
+      }
+
+      &:nth-child(2n) {
+        @apply bg-gray-50;
+      }
+
+      .blog_thumbnail {
+        a {
+          @apply block aspect-h-3 aspect-w-4
+            sm:aspect-h-9 sm:aspect-w-16;
+
+          img {
+            @apply object-cover
+              sm:object-none;
+          }
+        }
+      }
+
+      .blog_item_details {
+        .blog_title {
+          a {
+            @apply font-semibold no-underline text-xl line-clamp-1 mb-2;
+          }
+        }
+
+        .blog_preview {
+          p {
+            @apply line-clamp-2 mb-1;
+          }
+        }
+
+        .blog_date {
+          p {
+            @apply text-sm font-bold;
+          }
+        }
+
+        .blog_link {
+          a {
+            @apply text-sm text-primary;
+          }
+        }
+      }
+    }
+  }
+  .blog_rss {
+    @apply float-right;
+  }
+
+  .blog_summary {
+    .blog_total {
+      @apply font-bold;
+    }
+  }
+}
+
+.blog_details {
+  .social-share-inline {
+    ul {
+      @include resetListStyles();
+
+      @apply flex justify-end;
+    }
+  }
+
+  .blog_details_date {
+    a {
+      @apply font-bold text-primary;
+    }
+  }
+
+  .blog_details_links {
+    .blog_details_link_previous,
+    .blog_details_link_all {
+      a {
+        @apply no-underline rounded-md text-sm inline-block float-left mt-4 mr-4 bg-gray-50 hover:bg-gray-100 active:bg-gray-200 ring-1 ring-gray-900 ring-opacity-10 py-2 px-4;
+      }
+    }
+
+    .blog_details_link_previous a {
+      @apply rounded-l-md;
+    }
+    .blog_details_link_all a {
+      @apply rounded-r-md;
+    }
+  }
+}

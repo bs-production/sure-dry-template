@@ -1,0 +1,54 @@
+@mixin ContactWidget {
+  .widget_contact {
+    .widget_title {
+      @apply bg-primary border-b-0;
+
+      .citypage_contact_line1,
+      .citypage_contact_line2 {
+        @apply text-white text-center text-base;
+      }
+    }
+
+    .widget_content {
+      @apply bg-gray-100 mb-0;
+
+      #contact_form {
+        label {
+          @apply font-bold text-xs text-gray-600 pb-1 inline-block;
+        }
+
+        > div {
+          @apply mb-3;
+        }
+
+        select {
+          @apply text-sm text-gray-800;
+        }
+
+        input {
+          @apply w-full float-none text-sm;
+        }
+
+        textarea {
+          @apply w-full float-none text-sm;
+        }
+
+        .state {
+          @apply float-right w-[48%];
+        }
+
+        .zip {
+          @apply w-[48%];
+        }
+
+        .phone {
+          @apply clear-both;
+        }
+
+        #save {
+          @apply inline-block text-sm px-6 py-3 font-semibold text-white no-underline rounded-md cursor-pointer transition duration-200 bg-primary hover:opacity-90 text-center;
+        }
+      }
+    }
+  }
+}

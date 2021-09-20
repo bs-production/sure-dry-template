@@ -1,0 +1,51 @@
+.widget {
+  @apply mb-4 border border-gray-900 border-opacity-20 rounded-md overflow-hidden;
+
+  .widget_title {
+    @apply border-b border-gray-900 border-opacity-20 text-gray-900 bg-gray-100 font-bold py-2 px-3;
+  }
+
+  .widget_items {
+    @apply px-3 pt-1 pb-2;
+
+    ul {
+      @apply p-0 m-0;
+
+      li {
+        @apply list-none;
+      }
+    }
+  }
+
+  .widget_item {
+    @apply pt-2;
+  }
+
+  .widget_content {
+    @apply overflow-hidden bg-white text-gray-900 text-xs py-2 px-3 mb-2 leading-4;
+  }
+
+  .widget_controls {
+    @apply w-full overflow-hidden border-t border-gray-900 border-opacity-20 bg-gray-100;
+
+    .widget_more {
+      @apply py-2 px-3;
+
+      a {
+        @apply block text-center;
+      }
+    }
+
+    .prev-next {
+      @apply float-right p-2;
+    }
+  }
+
+  .widget_more {
+    @apply float-none px-3 py-2 text-sm;
+  }
+
+  .widget_scroll {
+    @apply max-h-40 overflow-y-auto;
+  }
+}

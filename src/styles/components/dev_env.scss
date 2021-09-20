@@ -1,0 +1,6 @@
+/**
+ * Conflicts with the dev script
+ */
+.alert-box.warning {
+  @apply hidden;
+}

@@ -1,0 +1,10 @@
+// Carousels in the page are not working anyway so just hide the controls
+#carousel {
+  ul {
+    @apply hidden;
+  }
+
+  .tab-nav {
+    @apply hidden;
+  }
+}

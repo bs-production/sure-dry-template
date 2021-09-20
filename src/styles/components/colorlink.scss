@@ -1,0 +1,19 @@
+.template-colorlink-wrapper {
+  @apply fixed inset-0 pointer-events-none;
+  z-index: 1002;
+
+  .colorlink-content {
+    @apply overflow-hidden absolute inset-0 flex
+      sm:flex-col sm:px-4;
+
+    aside {
+      @apply flex-1 m-8
+        sm:mx-4;
+    }
+
+    article {
+      @apply prose prose-lg bg-white w-[400px] px-8 py-6 pointer-events-auto overflow-auto
+        sm:w-full sm:max-h-[50%] sm:px-4 sm:py-4 sm:rounded-t-lg;
+    }
+  }
+}

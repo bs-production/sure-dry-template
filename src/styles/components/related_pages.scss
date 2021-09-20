@@ -1,0 +1,16 @@
+.related_pages_wrapper {
+  @apply ring-1 ring-gray-900 ring-opacity-10 rounded-md bg-gray-50 mt-12;
+
+  .related_pages {
+    @apply p-4;
+
+    .title {
+      @apply text-lg font-bold;
+    }
+
+    .button.right {
+      @apply float-right ml-4 mb-4
+        sm:float-none sm:ml-0;
+    }
+  }
+}

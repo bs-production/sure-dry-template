@@ -1,0 +1,31 @@
+@mixin CityMapWidget {
+  .widget_citypage_map {
+    .widget_content {
+      @apply px-0 py-0 bg-gray-100 mb-0;
+
+      .citypage_map_legend {
+        @apply px-3 py-2 border-t border-gray-900 border-opacity-20;
+
+        > p {
+          @apply text-sm pt-2;
+        }
+
+        .citypage-map-legend-item {
+          @apply bg-no-repeat pl-9 float-left h-[30px] leading-7 m-1 font-bold;
+
+          &.citypage-map-legend-item-testimonials {
+            background-image: url(https://cdn.treehouseinternetgroup.com/cms_core/images/icons/chat-icon.png);
+          }
+
+          &.citypage-map-legend-item-reviews {
+            background-image: url(https://cdn.treehouseinternetgroup.com/cms_core/images/icons/map-icon-review.png);
+          }
+
+          &.citypage-map-legend-item-jobs {
+            background-image: url(https://cdn.treehouseinternetgroup.com/cms_core/images/icons/citypage-lead.png);
+          }
+        }
+      }
+    }
+  }
+}

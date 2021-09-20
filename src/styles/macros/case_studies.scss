@@ -1,0 +1,110 @@
+@import "../utils/reset_list_styles.scss";
+
+.case_study_items {
+  @apply mb-4;
+
+  .case_study_item {
+    @apply grid gap-6 items-center grid-cols-[100px,1fr] border-b border-gray-900 border-opacity-10 py-4 px-4
+      sm:grid-cols-1;
+
+    &:nth-child(2n) {
+      @apply bg-gray-50;
+    }
+
+    .case_study_thumbnail {
+      a {
+        @apply block aspect-h-1 aspect-w-1
+          sm:aspect-h-9 sm:aspect-w-16;
+
+        img {
+          @apply object-cover
+            sm:object-none;
+        }
+      }
+    }
+    .case_study_item_details {
+      &:only-child {
+        @apply col-span-2;
+      }
+
+      .case_study_title {
+        a {
+          @apply font-semibold no-underline text-xl line-clamp-1 mb-2;
+        }
+      }
+      .blog_preview {
+        // The preview is only 2 lines but clamp it to avoid edge cases where it might go to 3 lines on smaller displays
+        @apply line-clamp-2 mb-1;
+      }
+      .blog_link {
+        a {
+          @apply text-sm text-primary;
+        }
+      }
+    }
+  }
+}
+
+#cs_gallery_container {
+  @apply float-right
+    xs:float-left;
+  ul {
+    @include resetListStyles();
+    @apply overflow-hidden my-0;
+
+    .case_study_gallery_li {
+      @apply max-w-[180px] ml-4 mb-4;
+
+      .case_study_details_photo {
+        @apply max-w-[180px] aspect-w-1 aspect-h-1 bg-no-repeat bg-cover rounded-md mb-4;
+      }
+
+      .case_study_details_photo_descr {
+        @apply text-xs text-gray-800;
+      }
+    }
+  }
+}
+
+.case_study_details {
+  .case_study_details_date {
+    @apply font-bold;
+
+    .social-share-inline {
+      ul {
+        @include resetListStyles();
+        @apply inline-flex my-0 space-x-2;
+      }
+    }
+  }
+
+  .case_study_details_body {
+    /**
+     * NOTE:
+     * ======
+     * - The margin of the top heading is getting collapsed
+     * - Something is pushing the content down and its not the margins or the br tag
+     *
+     * So to compansate I'm pulling the content up with negative margins to have
+     * a better reading flow.
+     */
+    @apply -mt-6;
+  }
+
+  .case_study_details_links {
+    .case_study_details_link_previous,
+    .case_study_details_link_all {
+      a {
+        @apply no-underline rounded-md text-sm inline-block float-left mt-4 mr-4 bg-gray-50 hover:bg-gray-100 active:bg-gray-200 ring-1 ring-gray-900 ring-opacity-10 py-2 px-4;
+      }
+    }
+
+    .case_study_details_link_previous a {
+      @apply rounded-l-md;
+    }
+
+    .case_study_details_link_all a {
+      @apply rounded-r-md;
+    }
+  }
+}

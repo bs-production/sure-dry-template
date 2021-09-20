@@ -1,0 +1,21 @@
+@mixin BeforeAfterSidebarWidget {
+  .before_after_sidebar_widget {
+    .widget_items {
+      @apply overflow-hidden bg-white text-gray-900 text-xs leading-4 mb-2 px-3 py-2;
+
+      .widget_item {
+        .widget_item_thumb {
+          @apply float-left mr-4;
+        }
+
+        .widget_item_title {
+          @apply font-bold;
+        }
+
+        .widget_item_text {
+          @apply py-2;
+        }
+      }
+    }
+  }
+}

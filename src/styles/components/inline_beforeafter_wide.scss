@@ -1,0 +1,17 @@
+/**
+ * Before after widget
+ * ====================
+ */
+.inline-beforeafter-wide.inline-beforeafter-wide.inline-beforeafter-wide {
+  ul {
+    @apply my-0;
+
+    li {
+      @apply my-0 pl-0;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+}

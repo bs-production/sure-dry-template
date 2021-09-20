@@ -1,0 +1,96 @@
+@import "../utils/avoid_collapse.scss";
+
+.breakout.breakout.breakout {
+  // Got this from the old system
+  width: 300px;
+
+  @screen sm {
+    max-width: 100% !important;
+    width: 100% !important;
+
+    > * {
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+  }
+
+  // Apply padding to direct children
+  > * {
+    @apply px-5;
+  }
+
+  // negate padding to direct media children
+  > a,
+  > img,
+  > iframe {
+    @apply p-0;
+
+    // Nagate bottom border radius when there is content below it
+    &:not(:only-child):first-child {
+      @apply rounded-b-none w-full;
+
+      // Images can be single children of links
+      img:only-child {
+        @apply rounded-b-none w-full;
+      }
+
+      & > a:only-child img {
+        @apply rounded;
+      }
+    }
+  }
+
+  img {
+    @apply min-sm:ml-0 min-sm:mt-0 min-sm:mr-0 min-sm:mb-0;
+  }
+
+  &.right {
+    @apply float-right min-sm:mb-4 min-sm:ml-4
+      sm:float-none;
+  }
+
+  &.left {
+    @apply float-left min-sm:mb-4 min-sm:mr-4
+      sm:float-none;
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+/**
+ * Some element float but do not contain the
+ * breakout class. Im keeping this for some
+ * elements
+ */
+
+.right {
+  @include avoidCollapse();
+  @apply min-sm:ml-4 min-sm:mb-4 clear-right;
+
+  @screen sm {
+    max-width: auto !important;
+    width: auto !important;
+
+    > * {
+      max-width: auto !important;
+      width: auto !important;
+    }
+  }
+}
+
+.left {
+  @include avoidCollapse();
+  @apply min-sm:mr-4 min-sm:mb-4;
+
+  @screen sm {
+    max-width: auto !important;
+    width: auto !important;
+
+    > * {
+      max-width: auto !important;
+      width: auto !important;
+    }
+  }
+}

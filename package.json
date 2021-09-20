@@ -1,0 +1,43 @@
+{
+  "name": "the_basement_doctor_template",
+  "version": "1.0.0",
+  "description": "Template for the basement doctor website",
+  "author": "Stephan Burger",
+  "license": "MIT",
+  "scripts": {
+    "parcel:serve": "parcel serve src/html/pages/*.html",
+    "parcel:watch": "parcel watch src/html/pages/*.html",
+    "parcel:build": "parcel build src/html/pages/*.html",
+    "clean": "rm -rf dist .parcel-cache",
+    "build": "npm-run-all -s clean parcel:build",
+    "start": "npm-run-all -s clean -p parcel:serve",
+    "parcel": "parcel"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "@parcel/transformer-sass": "2.0.0-beta.2",
+    "@tailwindcss/aspect-ratio": "^0.2.1",
+    "@tailwindcss/forms": "^0.3.3",
+    "@tailwindcss/line-clamp": "^0.2.1",
+    "@tailwindcss/typography": "^0.4.1",
+    "@types/dat.gui": "^0.7.7",
+    "autoprefixer": "^10.2.6",
+    "cssnano": "^5.0.5",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.0.0-beta.2",
+    "parcel-reporter-bundle-manifest": "^0.3.3",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.1",
+    "posthtml-beautify": "^0.7.0",
+    "posthtml-expressions": "^1.7.1",
+    "posthtml-include": "^1.7.1",
+    "posthtml-inline-svg": "^0.2.0",
+    "posthtml-load-config": "^2.0.0",
+    "sass": "^1.35.2",
+    "tailwindcss": "2.1.4"
+  },
+  "dependencies": {
+    "dat.gui": "^0.7.7",
+    "medium-zoom": "^1.0.6"
+  }
+}

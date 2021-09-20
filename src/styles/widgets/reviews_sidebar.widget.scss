@@ -1,0 +1,6 @@
+@mixin ReviewsSidebarWidget {
+  .reviews_sidebar_widget {
+    // Keep hidden, seems to be used on other sites
+    @apply hidden;
+  }
+}

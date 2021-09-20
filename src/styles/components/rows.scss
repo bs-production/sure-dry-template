@@ -1,0 +1,13 @@
+/**
+ * The way the rows are handled is weird.
+ * Rows with more than 4 items are split into
+ * more row containers.
+ *
+ * NOTE:
+ * =======
+ * A row container will not exceed 4 children
+ * and the last child will always have < 4 children
+ **/
+.row {
+  @apply gap-6 grid grid-cols-4 lg:grid-cols-2 sm:grid-cols-1;
+}

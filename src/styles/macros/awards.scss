@@ -1,0 +1,117 @@
+@import "../utils/reset_list_styles.scss";
+
+.awards_index {
+  .award_year_selector {
+    @apply mb-12;
+
+    .award_year_selector_groups {
+      .award_year_selector_groups_links {
+        ul {
+          @include resetListStyles();
+          @apply flex space-x-3 justify-center my-0 flex-wrap;
+
+          li {
+            a {
+              @apply mt-2 block no-underline text-lg font-semibold rounded-full ring-2 ring-[#f6ba52] text-[#b17917] hover:bg-[#f6ba52] hover:bg-opacity-25 transition duration-200 px-4 py-1;
+
+              &.award_selected_group {
+                @apply bg-[#b17917] text-white ring-[#b17917];
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .award_year_selector_seperator {
+      @apply h-1.5 bg-[#ffd180] rounded-full relative;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        #f6ba52,
+        #f6ba52 20px,
+        #ffd180 20px,
+        #ffd180 40px
+      );
+
+      &::before {
+        content: "";
+        @apply absolute top-1/2 left-0 w-4 h-4 rounded-full transform -translate-y-1/2 bg-[#f6ba52];
+      }
+      &::after {
+        content: "";
+        @apply absolute top-1/2 right-0 w-4 h-4 rounded-full transform -translate-y-1/2 bg-[#f6ba52];
+      }
+    }
+
+    .award_year_selector_years {
+      .award_year_selector_years_links {
+        ul {
+          @include resetListStyles();
+          @apply flex justify-center my-0 flex-wrap;
+
+          li {
+            @apply my-0;
+
+            a {
+              @apply no-underline block text-lg font-semibold px-4 py-2 hover:text-[#b17917] hover:underline;
+
+              &.award_selected_year {
+                @apply bg-[#ffebc7] hover:text-[#b17917] border-b-2 border-[#f6ba52];
+              }
+            }
+
+            // using the attributes to disable the ribbon
+            // It's the only distinguishing feature
+            img {
+              @apply hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .award_item {
+    a {
+      @apply no-underline;
+    }
+
+    &:hover {
+      .award_item_details {
+        .award_title {
+          @apply underline;
+        }
+      }
+    }
+
+    @apply float-left w-[calc(33%-32px)] m-4
+          md:w-[calc(50%-32px)]
+          sm:w-[calc(100%-32px)];
+
+    .award_thumbnail {
+      @apply relative flex justify-center;
+      .award_date {
+        @apply absolute bottom-0 left-0 bg-[#f6ba52] rounded-full text-white text-sm px-3 py-1 font-bold;
+      }
+    }
+
+    .award_item_details {
+      @apply mt-2;
+      .award_title {
+        @apply line-clamp-2 font-semibold;
+      }
+    }
+  }
+}
+
+.award_details {
+  .award_details_image {
+    img {
+      @apply max-w-[200px] float-left mr-4 mb-4;
+    }
+  }
+
+  .award_details_description {
+  }
+}

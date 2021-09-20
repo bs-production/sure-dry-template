@@ -1,0 +1,39 @@
+.affiliation_index {
+  .affiliation_item_by_department {
+    &:nth-of-type(2n) {
+      @apply bg-gray-50;
+    }
+
+    > .affiliation_item_details {
+      @apply grid gap-6 items-center grid-cols-[125px,1fr] border-b border-gray-900 border-opacity-10 py-8 px-4
+        sm:grid-cols-1;
+
+      .affiliation_thumbnail {
+        @apply relative;
+
+        img {
+          @apply w-full h-auto max-h-36 object-contain object-center;
+        }
+      }
+
+      > .affiliation_item_details {
+        @apply block border-none;
+
+        .affiliation_title {
+          @apply sm:text-center;
+          * {
+            @apply font-bold text-lg;
+          }
+        }
+      }
+    }
+  }
+
+  .affiliation_category_name.affiliation_category_name {
+    @apply bg-gray-900 text-white py-4 px-6 rounded-t-md mb-0;
+
+    &:not(:first-of-type) {
+      @apply mt-20;
+    }
+  }
+}

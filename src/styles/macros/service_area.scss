@@ -1,0 +1,43 @@
+#gmap-wrap {
+  $gmap-size: 350;
+  @apply float-right relative rounded-md overflow-hidden w-[#{$gmap-size}px] h-[#{$gmap-size}px]
+    sm:float-none sm:w-full;
+
+  .gm-style {
+    @apply absolute inset-0;
+  }
+}
+
+.service_area {
+  .service_area_row {
+    @apply grid grid-cols-[150px,1fr] p-4 gap-4 border-b border-gray-900 border-opacity-10
+      sm:p-2 sm:px-3 sm:gap-2;
+
+    &:nth-child(2n + 1) {
+      @apply bg-gray-50;
+    }
+
+    &.service_area_header {
+      @apply bg-gray-900 text-white font-bold rounded-t-md;
+
+      .service_area_cell {
+        @apply text-base;
+      }
+    }
+
+    .service_area_cell {
+      @apply text-sm;
+
+      a {
+        @apply text-primary;
+      }
+
+      &.service_area_county {
+        @apply font-semibold;
+      }
+
+      &.service_area_city {
+      }
+    }
+  }
+}

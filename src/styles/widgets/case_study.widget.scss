@@ -1,0 +1,15 @@
+@mixin CaseStudyWidget {
+  .case_studies_widget {
+    .case_study_thumb {
+      @apply float-left mr-2 max-h-[100px] max-w-[125px];
+    }
+
+    .widget_item {
+      @apply overflow-hidden mb-2;
+    }
+
+    .widget_moreurl {
+      @apply clear-both;
+    }
+  }
+}

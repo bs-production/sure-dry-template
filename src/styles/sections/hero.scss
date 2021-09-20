@@ -1,0 +1,145 @@
+@import "../utils/calculate_fraction_width.func.scss";
+@import "../utils/breakpoints.vars.scss";
+
+.hero-section-layout {
+  @apply gap-x-7;
+
+  display: grid;
+  grid-template-columns:
+    minmax(theme("spacing.8"), auto) minmax(
+      calculateFractionWidth(0.45, $screen-lg),
+      calculateFractionWidth(0.45, $screen-2xl)
+    )
+    minmax(
+      calculateFractionWidth(0.55, $screen-lg),
+      calculateFractionWidth(0.55, $screen-2xl)
+    )
+    minmax(theme("spacing.8"), auto);
+  grid-template-rows: auto auto 1fr 1fr;
+
+  @screen xl {
+    grid-template-columns:
+      minmax(theme("spacing.8"), auto) 1fr
+      300px
+      minmax(theme("spacing.8"), auto);
+  }
+
+  @screen md {
+    $image-set-height: 100;
+
+    grid-template-columns:
+      minmax(theme("spacing.4"), auto)
+      1fr
+      minmax(theme("spacing.4"), auto);
+    grid-template-rows: auto #{$image-set-height}px auto auto;
+  }
+
+  .hero-bg {
+    @apply relative col-start-1 col-end-5 row-start-1 row-end-3 bg-index
+      md:row-end-4 md:col-end-4;
+  }
+
+  .logo-bg-container {
+    @apply col-start-1 col-end-5 row-start-3 row-end-5
+      md:row-start-4 md:row-end-5 md:col-end-4;
+    background-color: #f5f5f5;
+  }
+
+  .logo-container {
+    @apply col-start-2 col-end-3 row-start-3 row-end-5 py-14 opacity-30 lg:py-8
+      lg:col-end-4
+      md:row-start-4 md:row-end-5 md:col-end-3;
+
+    .text-placeholder {
+      @apply text-xl font-black
+        lg:text-center;
+    }
+  }
+
+  .heading-main-text-container {
+    @apply col-start-2 col-end-3 row-start-1 row-end-2 pt-32
+      md:pt-8;
+
+    .heading-main-text {
+      @apply mb-4 font-semibold leading-snug text-white text-7xl
+        lg:text-3xl
+        md:text-center md:text-2xl md:mb-0;
+
+      .heading-main-text-highlight {
+        @apply font-black;
+      }
+    }
+  }
+
+  .heading-sub-text-container {
+    @apply col-start-2 col-end-3 row-start-2 row-end-3 pb-32
+      md:row-start-3 md:row-end-4 md:pb-8;
+
+    .heading-sub-text-container-wrapper {
+      @apply mb-10 md:mb-6;
+
+      .heading-sub-text {
+        @apply text-2xl font-medium text-white
+          lg:text-base
+          md:text-center md:text-xs;
+
+        .heading-sub-text-highlight {
+          @apply font-bold;
+        }
+      }
+    }
+
+    .button-container {
+      @apply md:flex md:justify-center;
+    }
+  }
+
+  .images-container {
+    @apply flex col-start-3 col-end-4 row-start-1 row-end-4 pt-32 z-[1]
+      xl:flex-col
+      lg:row-end-3 lg:pt-8 lg:pb-8
+      md:col-start-1 md:col-end-4 md:row-start-2 md:row-end-3 md:flex-row md:justify-between md:pt-3 md:pb-3;
+
+    .image-set-container {
+      @apply flex flex-col flex-1 first:mr-3 last:ml-3
+        xl:first:mr-0 xl:last:ml-0
+        md:flex-row;
+
+      .image-one {
+        @apply relative mb-3
+          xl:mt-3
+          md:mb-0 md:mt-0 md:mr-1;
+        flex-grow: 2;
+
+        @screen xl {
+          flex: 1;
+        }
+      }
+
+      .image-two {
+        @apply relative mt-3
+          xl:mb-3
+          md:mb-0 md:mt-0 md:mr-1 md:ml-1;
+        flex-grow: 1;
+      }
+
+      .image-three {
+        @apply relative mb-3
+          xl:mt-3
+          md:mb-0 md:mt-0 md:mr-1 md:ml-1;
+        flex-grow: 1;
+      }
+
+      .image-four {
+        @apply relative mt-3
+          xl:mb-3
+          md:mb-0 md:mt-0 md:ml-1;
+        flex-grow: 2;
+
+        @screen xl {
+          flex: 1;
+        }
+      }
+    }
+  }
+}

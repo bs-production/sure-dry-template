@@ -1,0 +1,19 @@
+@mixin PhotoGalleryWidget {
+  .photo_gallery_widget {
+    .widget_item {
+      @apply py-2;
+
+      .photo_gallery_thumb {
+        @apply inline h-[100px] w-[100px];
+      }
+
+      .widget_item_preview {
+        @apply inline h-[100px] w-[70%] float-right;
+      }
+    }
+
+    .widget_moreurl {
+      @apply pt-4;
+    }
+  }
+}

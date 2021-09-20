@@ -1,0 +1,8 @@
+.display-table.display-table {
+  @apply flex space-x-4 justify-center items-center
+    sm:flex-col sm:space-x-1 sm:space-y-2;
+
+  img {
+    @apply rounded mt-1;
+  }
+}

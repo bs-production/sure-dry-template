@@ -1,0 +1,29 @@
+// Design Guide
+https://th-design-system.netlify.app/docs/build/supernav.html#pjax-container
+
+// Dev Enviroments
+http://www.bsiadmin.com/standalone/custom_template_editor/
+http://www.bsiadmin.com/standalone/custom_template_editor/super_nav.php
+
+// Actual websites
+https://www.suredrybasements.com/?cache=0&dev_template=1&test=1
+https://www.suredrybasements.com/
+
+// These are for css stylessheets (Uses gist for the cdn)
+https://gist.github.com/IamStephan/c4f18bfd2fd253373929fd607c718c90
+https://min.gitcdn.link/
+https://combinatronics.com/
+
+// Reference to newer sites
+https://www.midwestfr.com/
+
+<?php
+  /**
+    * The [[content]] token needs to be in the top level
+    * of the html parsing. So ending the if statement
+    * early and continueing the condition right after
+    * to push the token to the top of the HTML
+    * 
+    * (At least I think that's why it's causing issues)
+    */
+?>

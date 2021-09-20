@@ -1,0 +1,15 @@
+@mixin PressReleaseWidget {
+  .press_release_widget {
+    .widget_item {
+      @apply float-left mb-2;
+    }
+
+    .press_release_image {
+      @apply max-h-[125px] overflow-hidden float-left;
+
+      img {
+        @apply w-[125px] mr-2;
+      }
+    }
+  }
+}

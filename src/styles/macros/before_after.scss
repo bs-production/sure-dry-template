@@ -1,0 +1,63 @@
+@import "../utils/avoid_collapse.scss";
+
+.before_after_index {
+  .before_after_items {
+    @apply flex flex-col space-y-6;
+
+    .before_after_item {
+      @include avoidCollapse();
+      @apply bg-gray-50 ring-1 ring-gray-900 ring-opacity-10 rounded-md px-4 flex flex-col;
+
+      h2 {
+        @apply text-center;
+      }
+
+      .before_after_images {
+        @apply flex sm:flex-col;
+
+        a {
+          @apply block flex-1;
+
+          .before_after_image_left {
+            @apply relative aspect-w-4 aspect-h-3;
+
+            .before_after_photo {
+              @apply rounded-none rounded-l-md sm:rounded-none sm:rounded-t-md object-cover;
+            }
+
+            .before_after_left_status {
+              @apply pointer-events-none;
+              span {
+                @apply text-white absolute bottom-2 left-4 font-bold;
+              }
+            }
+          }
+
+          .before_after_image_right {
+            @apply relative aspect-w-4 aspect-h-3;
+
+            .before_after_photo {
+              @apply rounded-none rounded-r-md sm:rounded-none sm:rounded-b-md object-cover;
+            }
+
+            .before_after_right_status {
+              @apply pointer-events-none;
+              span {
+                @apply text-white absolute bottom-2 right-4 font-bold;
+              }
+            }
+          }
+        }
+      }
+
+      .before_after_description {
+      }
+    }
+  }
+}
+
+.before_after_summary {
+  .before_after_total {
+    @apply mt-6 text-sm font-bold;
+  }
+}

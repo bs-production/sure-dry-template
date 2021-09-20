@@ -1,0 +1,81 @@
+.footer {
+  .top-footer {
+    @apply grid grid-cols-4
+      xl:grid-cols-2
+      md:grid-cols-1;
+
+    .cta-block {
+      @apply py-16 px-20 flex flex-col items-start
+        3xl:px-16
+        2xl:px-10;
+      background-color: #f5f5f5;
+
+      .button {
+        @apply mb-7;
+      }
+
+      .cta-label {
+        @apply text-xs mb-1.5 inline-block;
+        color: #231f20;
+      }
+
+      .cta-number {
+        @apply text-3xl font-bold;
+        color: #231f20;
+      }
+    }
+
+    .block {
+      @apply py-16 px-16 3xl:px-16 2xl:px-10 border-r border-solid last:border-r-0
+        xl:last:border-t
+        md:border-t md:border-r-0 md:first:border-t-0;
+      border-color: rgba(#231f20, 0.25);
+
+      .block-title {
+        @apply mb-4 font-bold;
+      }
+
+      .block-list-container {
+        columns: 2;
+
+        // I really don't like this (It's making exceptions to rules already set out)
+        @media (max-width: 400px) {
+          columns: 1;
+        }
+
+        .block-list {
+          @apply first:mr-4;
+
+          .block-list-item {
+            @apply text-sm inline-block mb-2 cursor-pointer hover:underline;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-footer {
+    @apply text-white flex justify-center py-4
+      lg:flex-wrap
+      md:flex-col;
+    background-color: #231f20;
+
+    .text-span {
+      @apply block text-sm text-center
+        lg:mb-2 lg:flex-1;
+
+      @screen lg {
+        min-width: 50%;
+      }
+    }
+
+    .text-separator {
+      @apply inline mx-2
+        lg:hidden;
+    }
+
+    .text-bold {
+      @apply text-sm font-semibold;
+    }
+  }
+}

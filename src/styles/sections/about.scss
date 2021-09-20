@@ -1,0 +1,28 @@
+.about {
+  @apply mx-16 md:mx-8;
+
+  .about-title {
+    @apply mb-6 text-5xl font-bold text-center text-primary
+      lg:text-3xl
+      md:text-xl;
+  }
+
+  .about-subtitle {
+    @apply max-w-screen-lg mx-auto mb-6 text-3xl font-medium text-center uppercase
+      lg:text-lg
+      sm:text-base;
+    color: #231f20;
+  }
+
+  .about-content {
+    @apply max-w-screen-xl mx-auto mb-6 text-xl leading-normal text-gray-600 last:mb-0
+      lg:text-base
+      sm:text-sm;
+    color: #231f20;
+  }
+
+  .about-cta-container {
+    @apply flex justify-center mt-10
+      md:hidden;
+  }
+}

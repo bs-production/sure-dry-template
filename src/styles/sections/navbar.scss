@@ -1,0 +1,101 @@
+@import "../utils/calculate_fraction_width.func.scss";
+@import "../utils/breakpoints.vars.scss";
+
+.navigation-layout {
+  @apply relative;
+  display: grid;
+  grid-template-columns:
+    minmax(theme("spacing.8"), auto) minmax(
+      calculateFractionWidth(0.4, $screen-lg),
+      calculateFractionWidth(0.4, $screen-2xl)
+    )
+    minmax(
+      calculateFractionWidth(0.6, $screen-lg),
+      calculateFractionWidth(0.6, $screen-2xl)
+    )
+    minmax(theme("spacing.8"), auto);
+  grid-template-rows: auto auto;
+  z-index: 999;
+
+  @screen xl {
+    grid-template-columns:
+      minmax(theme("spacing.8"), auto)
+      4fr
+      10fr
+      // this translates to 44fr and 55fr respectively
+      minmax(theme("spacing.8"), auto);
+  }
+
+  .banner {
+    @apply col-start-3 col-end-5 row-start-1 row-end-2
+      xl:col-start-1 xl:col-end-5;
+    background-color: #272526;
+  }
+
+  .banner-text {
+    @apply flex col-start-3 col-end-4 row-start-1 row-end-2 items-center text-white pl-4
+      2xl:text-xs
+      xl:col-start-2 xl:col-end-5 xl:justify-end
+      lg:justify-center sm:justify-between
+      md:col-start-1 md:pl-0
+      sm:pl-4;
+
+    background-color: #272526;
+
+    &.navigation-start-triangle {
+      position: relative;
+
+      &::before {
+        $triangle-slope: 150;
+        content: "";
+        bottom: 0px;
+        left: #{-$triangle-slope}px;
+        position: absolute;
+        width: #{$triangle-slope}px;
+        height: 100%;
+        background-color: #272526;
+        transform-origin: bottom right;
+        transform: rotate(45deg);
+        z-index: -5;
+      }
+    }
+
+    .separator {
+      @apply px-4
+        sm:px-1;
+    }
+
+    .serving {
+      @apply mr-12
+        sm:mr-2;
+    }
+
+    .cta {
+      @apply px-5 py-2 bg-primary;
+
+      .cta-text {
+        @apply text-lg font-semibold
+          2xl:text-sm
+          sm:hidden;
+      }
+
+      .cta-text-small {
+        @apply hidden font-bold items-center
+          sm:flex;
+
+        .phone {
+          @apply mr-2 w-4;
+        }
+      }
+    }
+
+    .closing-at {
+      @apply sm:hidden;
+    }
+  }
+
+  .logo-container {
+    @apply relative col-start-2 col-end-3 row-start-1 row-end-3 my-8
+      xl:row-start-2 xl:row-end-3 xl:my-5;
+  }
+}

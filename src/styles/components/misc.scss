@@ -1,0 +1,16 @@
+@import "../utils/avoid_collapse.scss";
+
+.border {
+  @include avoidCollapse();
+  @apply ring-1 ring-gray-900 ring-opacity-10 rounded-md;
+}
+
+.bg {
+  @include avoidCollapse();
+  @apply bg-gray-50 rounded-md;
+}
+
+.display-table {
+  @apply table #{!important};
+  @apply mx-auto;
+}

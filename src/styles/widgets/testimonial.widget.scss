@@ -1,0 +1,7 @@
+@mixin TestimonialWidget {
+  .widget_testimonials {
+    .widget_content {
+      @apply h-32 overflow-y-scroll mb-0 px-3 py-2;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import "../utils/reset_list_styles.scss";
+
+.photogallery_albums.photogallery_albums.photogallery_albums {
+  > ul {
+    @include resetListStyles();
+
+    @apply grid gap-6;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+
+    .photogallery_album_item {
+      @apply ring-1 ring-gray-900 ring-opacity-10 rounded-md overflow-hidden;
+      // The actual image
+      > a {
+        @apply aspect-w-16 aspect-h-9 w-full block bg-no-repeat bg-cover;
+      }
+
+      .photogallery_album_photo_count {
+        @apply px-6 mt-4 text-xs;
+      }
+
+      .photogallery_album_title {
+        @apply px-6 mb-4 mt-2 line-clamp-2 block;
+      }
+    }
+  }
+}
+
+li.photogallery_item.photogallery_item.photogallery_item {
+  @apply pl-0;
+  &::before {
+    @apply hidden;
+  }
+}

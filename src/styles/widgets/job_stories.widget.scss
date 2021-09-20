@@ -1,0 +1,15 @@
+@mixin JobStoriesWidget {
+  .widget_job_stories {
+    .widget_item_title {
+      @apply font-bold mb-2;
+    }
+
+    .widget_item {
+      @apply border-b border-dotted border-gray-200 mb-2;
+
+      &:last-child {
+        @apply border-b-0;
+      }
+    }
+  }
+}

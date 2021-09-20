@@ -1,0 +1,9 @@
+/**
+ * ! REMOVE bg class from photo blocks and this component can be removed
+ */
+
+.photo-block {
+  > * {
+    @apply bg-transparent;
+  }
+}

@@ -1,0 +1,190 @@
+$silo-width: 275;
+
+.content-template-article {
+  @apply mx-auto max-w-screen-xl gap-y-6 gap-x-6 px-8
+    md:px-4;
+  display: grid;
+  grid-template-columns: #{$silo-width}px auto;
+
+  grid-template-rows: auto auto;
+
+  @screen lg {
+    grid-template-columns: 1fr;
+  }
+
+  // When content needs to rendered without breadcrumbs
+  &.no-breadcrumbs {
+    .content-template-main {
+      @apply col-start-1 col-end-2;
+    }
+  }
+
+  // When content needs to rendered without a silo
+  &.no-silo {
+    @apply grid-cols-1;
+
+    .content-template-breadcrumbs {
+      @apply col-start-1 col-end-2 row-start-1 row-end-2
+        lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2;
+    }
+
+    .content-template-main {
+      @apply max-w-5xl mx-auto col-start-1 col-end-2
+        lg:row-start-2 lg:row-end-3;
+    }
+  }
+
+  // When both the breadcrumbs and silo are disabled move the content to the fist row
+  // The gap provided by the empty row seems to space the elements nicely from the navbar
+  // But its probably better to explicityly define what's happening by having specific styles
+  &.no-breadcrumbs.no-silo {
+    // Override default section gap
+    @apply my-12
+      lg:my-12 md:my-8;
+    .content-template-main {
+      @apply row-start-1 row-end-2;
+    }
+  }
+
+  .content-template-breadcrumbs {
+    @apply col-start-1 col-end-3 row-start-1 row-end-2 bg-gray-50 px-4 py-2 text-sm rounded-md font-semibold text-gray-900
+      lg:col-start-1 lg:col-end-2 lg:row-start-2 lg:row-end-3;
+
+    // From the generated token
+    #bread_crumbs {
+      @apply flex flex-wrap;
+
+      .separator {
+        @apply mx-2;
+      }
+
+      [itemprop="itemListElement"]:not(:last-of-type) {
+        @apply font-semibold hover:underline;
+      }
+
+      [itemprop="itemListElement"]:last-of-type {
+        @apply text-primary font-bold;
+      }
+    }
+  }
+
+  //? Maybe remove the ring around the silo
+  .content-template-silo {
+    @screen min-lg {
+      @apply col-start-1 col-end-2 row-start-2 row-end-3;
+
+      .content-template-silo-menu {
+        @apply hidden;
+      }
+
+      .content-template-silo-container {
+        @apply sticky top-4 bg-gray-50 px-4 py-3 rounded-md ring-1 ring-gray-900 ring-opacity-10;
+      }
+    }
+
+    @screen lg {
+      @apply col-start-1 col-end-2 row-start-1 row-end-2 relative z-50;
+
+      .content-template-silo-menu {
+        @apply flex justify-center sm:justify-start;
+
+        button {
+          @apply font-semibold px-4 py-2 bg-primary rounded-full text-white focus:outline-none flex items-center
+            sm:text-sm;
+
+          .dropdown {
+            @apply ml-2;
+          }
+        }
+      }
+
+      .content-template-silo-container {
+        @apply opacity-0 pointer-events-none absolute -bottom-2 transition duration-200 rounded-md left-1/2 bg-white pl-4 pr-8 py-4 ring-1 ring-gray-900 ring-opacity-10 shadow-2xl
+          sm:w-full;
+        transform: translate(-50%, calc(100% - theme("spacing.5")));
+
+        &.show {
+          @apply opacity-100 pointer-events-auto;
+          transform: translate(-50%, 100%);
+        }
+      }
+    }
+
+    .content-template-silo-container {
+      > ul {
+        // Any active link
+        li.active {
+          @apply relative;
+
+          &::before {
+            @apply absolute -left-6 w-5 h-5 text-primary;
+            content: url("data:image/svg+xml,%3Csvg width='100%' height='100%' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z' fill='rgb(212, 57, 42)' /%3E%3C/svg%3E");
+          }
+        }
+
+        // Expanded containers
+        li.expanded {
+          > a {
+            @apply font-semibold;
+          }
+        }
+
+        // All the links
+        a {
+          @apply block hover:underline mb-2 font-light;
+        }
+
+        // The main page category
+        > li {
+          // The actual link of the page category
+          > a {
+            @apply text-xl font-bold text-primary mb-4;
+          }
+
+          // Main Links relating to the category
+          > ul {
+            @apply pl-4;
+
+            > li {
+              > a {
+                @apply font-semibold;
+              }
+
+              // sub category container
+              // Account for nested links
+              ul {
+                @apply pl-6 border-l;
+
+                > li {
+                  > a {
+                    @apply text-sm;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .content-template-main {
+    @apply col-start-2 col-end-3 row-start-2 row-end-3 prose max-w-none
+      lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4
+      md:prose-sm;
+
+    // Reset styling on alll native tags
+    hr {
+      // Default spacing on desktop is way to big
+      @apply my-8 clear-both;
+    }
+
+    img {
+      @apply rounded my-0;
+    }
+
+    iframe {
+      @apply rounded ring-1 ring-gray-900 ring-opacity-10;
+    }
+  }
+}

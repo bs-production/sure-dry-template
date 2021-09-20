@@ -1,0 +1,9 @@
+@mixin resetListStyles {
+  li {
+    @apply pl-0;
+
+    &::before {
+      @apply hidden;
+    }
+  }
+}
