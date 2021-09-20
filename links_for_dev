@@ -17,13 +17,14 @@ https://combinatronics.com/
 // Reference to newer sites
 https://www.midwestfr.com/
 
-<?php
-  /**
-    * The [[content]] token needs to be in the top level
-    * of the html parsing. So ending the if statement
-    * early and continueing the condition right after
-    * to push the token to the top of the HTML
-    * 
-    * (At least I think that's why it's causing issues)
-    */
-?>
+
+
+
+/**
+  * The [[content]] token needs to be in the top level
+  * of the html parsing. So ending the if statement
+  * early and continuing the condition right after
+  * to push the token to the top of the HTML
+  * 
+  * (At least I think that's why it's causing issues)
+  */
