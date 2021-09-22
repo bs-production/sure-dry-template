@@ -1,0 +1,228 @@
+<!-- START main -->
+
+<style>
+  .social-proof-widget {
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+  }
+  @media (max-width: 1023px) {
+    .social-proof-widget {
+      padding-bottom: 4rem;
+      padding-top: 4rem;
+    }
+  }
+  @media (max-width: 767px) {
+    .social-proof-widget {
+      padding-bottom: 2rem;
+      padding-top: 2rem;
+    }
+  }
+  .social-proof-widget .social-proof-widget-heading {
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  @media (max-width: 767px) {
+    .social-proof-widget .social-proof-widget-heading {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      margin-bottom: 2rem;
+    }
+  }
+  .social-proof-widget .testimonials-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  @media (max-width: 1023px) {
+    .social-proof-widget .testimonials-container {
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 767px) {
+    .social-proof-widget .testimonials-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  .social-proof-widget .testimonials-container .testimonial {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin-right: 6rem;
+  }
+  @media (max-width: 1023px) {
+    .social-proof-widget .testimonials-container .testimonial {
+      display: none;
+      margin-bottom: 3rem;
+      margin-right: 0;
+    }
+  }
+  .social-proof-widget .testimonials-container .testimonial {
+    max-width: 600px;
+  }
+  @media (max-width: 1023px) {
+    .social-proof-widget .testimonials-container .testimonial:first-child,
+    .social-proof-widget .testimonials-container .testimonial:nth-child(2) {
+      display: flex;
+    }
+    .social-proof-widget .testimonials-container .testimonial:nth-child(2) {
+      align-items: flex-start;
+      margin-bottom: 0;
+    }
+    .social-proof-widget
+      .testimonials-container
+      .testimonial:nth-child(2)
+      .testimonial-triangle {
+      transform: translate(-25%, -50%) rotate(270deg);
+    }
+  }
+  .social-proof-widget .testimonials-container .testimonial .testimonial-body {
+    --tw-bg-opacity: 1;
+    align-self: stretch;
+    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+    padding: 2rem 3rem;
+    z-index: 10;
+  }
+  @media (max-width: 639px) {
+    .social-proof-widget
+      .testimonials-container
+      .testimonial
+      .testimonial-body {
+      padding: 1.25rem 1.5rem;
+    }
+  }
+  .social-proof-widget
+    .testimonials-container
+    .testimonial
+    .testimonial-body
+    .testimonial-body-ratings-container {
+    display: flex;
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 639px) {
+    .social-proof-widget
+      .testimonials-container
+      .testimonial
+      .testimonial-body
+      .testimonial-body-ratings-container {
+      margin-bottom: 0.75rem;
+    }
+  }
+  .social-proof-widget
+    .testimonials-container
+    .testimonial
+    .testimonial-body
+    .testimonial-body-ratings-container
+    img {
+    height: 2rem;
+    margin-right: 0.75rem;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 2rem;
+  }
+  @media (max-width: 767px) {
+    .social-proof-widget
+      .testimonials-container
+      .testimonial
+      .testimonial-body
+      .testimonial-body-ratings-container
+      img {
+      height: 1.5rem;
+      margin-right: 0.25rem;
+      width: 1.5rem;
+    }
+  }
+  .social-proof-widget
+    .testimonials-container
+    .testimonial
+    .testimonial-body
+    .testimonial-body-review {
+    display: block;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .social-proof-widget
+    .testimonials-container
+    .testimonial
+    .testimonial-body
+    .testimonial-body-review:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 639px) {
+    .social-proof-widget
+      .testimonials-container
+      .testimonial
+      .testimonial-body
+      .testimonial-body-review {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+  }
+  .social-proof-widget
+    .testimonials-container
+    .testimonial
+    .testimonial-body
+    .testimonial-body-customer {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  @media (max-width: 639px) {
+    .social-proof-widget
+      .testimonials-container
+      .testimonial
+      .testimonial-body
+      .testimonial-body-customer {
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+  }
+  .social-proof-widget
+    .testimonials-container
+    .testimonial
+    .testimonial-body
+    .testimonial-body-customer {
+    color: #838383;
+  }
+  .social-proof-widget
+    .testimonials-container
+    .testimonial
+    .testimonial-triangle {
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+    border-top: 26px solid #fff;
+    height: 0;
+    transform: translate(25%, -50%) rotate(90deg);
+    width: 0;
+  }
+</style>
+
+<div class="social-proof-widget">
+  <h2 class="social-proof-widget-heading">Trusted by Homeowners Like You</h2>
+
+  <div class="testimonials-container">[[items]]</div>
+</div>
+
+<!-- END -->
+<!-- START item -->
+<div class="testimonial">
+  <div class="testimonial-body">
+    <div class="testimonial-body-ratings-container">[[stars]]</div>
+
+    <a class="testimonial-body-review" href="[[url]]"> [[text]] </a>
+
+    <p class="testimonial-body-customer">[[author]] - [[location]]</p>
+  </div>
+
+  <div class="testimonial-triangle"></div>
+</div>
+<!-- END -->
