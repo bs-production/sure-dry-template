@@ -96,15 +96,6 @@
     $pageType = 'CONTENT';
   }
 
-  /**
-   * Content Prevention
-   * ====================
-   * Prevent Content from being rendered into the home page
-   */
-  if($pageType == "HOME") {
-    $cmsPageData["page.body_content"] = "";
-    $cmsPageData["page.bottom_content"] = "";
-  }
 
   /**
    * Selective Content (should render)
