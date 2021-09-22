@@ -1,0 +1,13 @@
+{
+  "plugins": {
+    "posthtml-include": { "root": "src/html" },
+    "posthtml-inline-svg": {},
+    "posthtml-expressions": {
+      "locals": {
+        "showSilo": true,
+        "showBreadcrumbs": true
+      }
+    },
+    "posthtml-beautify": {}
+  }
+}
