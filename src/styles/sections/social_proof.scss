@@ -15,87 +15,88 @@
     }
   }
 
-  .social-proof-content {
-    @apply py-32
-      lg:py-16
-      md:py-8;
+  // Handled by review widget
+  // .social-proof-content {
+  //   @apply py-32
+  //     lg:py-16
+  //     md:py-8;
 
-    .social-proof-content-heading {
-      @apply mb-10 text-3xl font-semibold text-center text-white
-        md:text-lg md:mb-8;
-    }
+  //   .social-proof-content-heading {
+  //     @apply mb-10 text-3xl font-semibold text-center text-white
+  //       md:text-lg md:mb-8;
+  //   }
 
-    .testimonials-container {
-      @apply flex px-16 overflow-x-hidden flex-nowrap
-        lg:flex-col lg:items-center
-        md:px-8;
+  //   .testimonials-container {
+  //     @apply flex px-16 overflow-x-hidden flex-nowrap
+  //       lg:flex-col lg:items-center
+  //       md:px-8;
 
-      .testimonial {
-        @apply flex flex-col items-end flex-shrink-0 mr-24
-          lg:mr-0 lg:mb-12 lg:hidden;
-        max-width: 600px;
+  //     .testimonial {
+  //       @apply flex flex-col items-end flex-shrink-0 mr-24
+  //         lg:mr-0 lg:mb-12 lg:hidden;
+  //       max-width: 600px;
 
-        @screen lg {
-          // Only show the first two items
-          &:nth-child(1),
-          &:nth-child(2) {
-            display: flex;
-          }
+  //       @screen lg {
+  //         // Only show the first two items
+  //         &:nth-child(1),
+  //         &:nth-child(2) {
+  //           display: flex;
+  //         }
 
-          // reset 2nd child layout
-          &:nth-child(2) {
-            margin-bottom: 0;
-          }
+  //         // reset 2nd child layout
+  //         &:nth-child(2) {
+  //           margin-bottom: 0;
+  //         }
 
-          // alternate tringles
-          // Needs a deep dive to the triangle
-          &:nth-child(2) {
-            align-items: flex-start;
+  //         // alternate tringles
+  //         // Needs a deep dive to the triangle
+  //         &:nth-child(2) {
+  //           align-items: flex-start;
 
-            .testimonial-triangle {
-              transform: translate(-25%, -50%) rotate(270deg);
-            }
-          }
-        }
+  //           .testimonial-triangle {
+  //             transform: translate(-25%, -50%) rotate(270deg);
+  //           }
+  //         }
+  //       }
 
-        .testimonial-body {
-          @apply z-10 self-stretch px-12 py-8 bg-white
-            sm:px-6 sm:py-5;
+  //       .testimonial-body {
+  //         @apply z-10 self-stretch px-12 py-8 bg-white
+  //           sm:px-6 sm:py-5;
 
-          .testimonial-body-ratings-container {
-            @apply flex mb-6
-              sm:mb-3;
+  //         .testimonial-body-ratings-container {
+  //           @apply flex mb-6
+  //             sm:mb-3;
 
-            .testimonial-rating {
-              @apply object-contain w-8 h-8 mr-3
-                md:mr-1 md:w-6 md:h-6;
-            }
-          }
+  //           .testimonial-rating {
+  //             @apply object-contain w-8 h-8 mr-3
+  //               md:mr-1 md:w-6 md:h-6;
+  //           }
+  //         }
 
-          .testimonial-body-review {
-            @apply mb-2 text-lg
-              sm:text-sm;
-          }
+  //         .testimonial-body-review {
+  //           @apply mb-2 text-lg
+  //             sm:text-sm;
+  //         }
 
-          .testimonial-body-customer {
-            @apply text-sm
-              sm:text-xs;
-            color: #838383;
-          }
-        }
+  //         .testimonial-body-customer {
+  //           @apply text-sm
+  //             sm:text-xs;
+  //           color: #838383;
+  //         }
+  //       }
 
-        .testimonial-triangle {
-          $size: 26;
+  //       .testimonial-triangle {
+  //         $size: 26;
 
-          width: 0;
-          height: 0;
-          border-left: #{$size}px solid transparent;
-          border-right: #{$size}px solid transparent;
+  //         width: 0;
+  //         height: 0;
+  //         border-left: #{$size}px solid transparent;
+  //         border-right: #{$size}px solid transparent;
 
-          border-top: #{$size}px solid #ffffff;
-          transform: translate(25%, -50%) rotate(90deg);
-        }
-      }
-    }
-  }
+  //         border-top: #{$size}px solid #ffffff;
+  //         transform: translate(25%, -50%) rotate(90deg);
+  //       }
+  //     }
+  //   }
+  // }
 }
