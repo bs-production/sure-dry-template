@@ -38,7 +38,7 @@
       xl:col-start-2 xl:col-end-5 xl:justify-end
       lg:justify-center sm:justify-between
       md:col-start-1 md:pl-0
-      sm:pl-4;
+      sm:pl-1 sm:space-x-3;
 
     background-color: #272526;
 
@@ -67,11 +67,11 @@
 
     .serving {
       @apply mr-12
-        sm:mr-2;
+        sm:mr-2 sm:text-center;
     }
 
     .cta {
-      @apply px-5 py-2 bg-primary;
+      @apply bg-primary;
 
       .cta-text {
         @apply text-lg font-semibold
@@ -83,14 +83,28 @@
         @apply hidden font-bold items-center
           sm:flex;
 
-        .phone {
-          @apply mr-2 w-4;
+        a {
+          @apply items-center flex-col whitespace-nowrap
+            sm:flex;
         }
+
+        .phone {
+          @apply mb-2 w-4;
+        }
+      }
+
+      a {
+        @apply px-5 py-2 block
+          sm:px-3;
       }
     }
 
-    .closing-at {
-      @apply sm:hidden;
+    .closing-at-container {
+      @apply sm:text-center;
+
+      .closing-at {
+        @apply sm:hidden;
+      }
     }
   }
 
