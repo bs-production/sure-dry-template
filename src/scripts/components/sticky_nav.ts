@@ -48,6 +48,7 @@ class StickyNav {
       .sticky-nav-show { 
           opacity: 1 !important;
           transform: translateY(0px) !important;
+          pointer-events: auto !important;
        }
     `;
 
@@ -81,21 +82,24 @@ class StickyNav {
 
   private _createParentClone() {
     const parent = document.createElement("nav");
+    // Removes tabs, new lines and double spaces
+    const reqexNoSpace = /(\r\n|\n|\r|\t|(\s\s+))/gm;
 
     parent.setAttribute(
       "style",
       `
-      position: fixed;
-      opacity: 0;
-      transform: translateY(-25px);
-      top: 0px;
-      left: 0px;
-      right: 0px;
-      z-index: 1000;
-      background-color: white;
-      border-bottom: 1px solid rgba(35, 31, 32, 0.10);
-      transition: all 150ms ease-in-out;
-    `
+        position: fixed;
+        opacity: 0;
+        transform: translateY(-25px);
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        z-index: 1000;
+        background-color: white;
+        border-bottom: 1px solid rgba(35, 31, 32, 0.10);
+        transition: all 150ms ease-in-out;
+        pointer-events: none;
+    `.replace(reqexNoSpace, "")
     );
 
     parent.setAttribute("class", "navigation-layout");
