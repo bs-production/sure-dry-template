@@ -47,24 +47,67 @@
   }
 
   .service-areas-content-container {
-    @apply z-10 max-w-3xl col-start-3 col-end-5 row-start-2 row-end-3 mb-28 mr-16
+    @apply z-10 max-w-3xl col-start-3 col-end-5 row-start-2 row-end-3 mb-28 mr-16 max-h-96 overflow-auto
       2xl:mb-16
       lg:col-start-2 lg:col-end-3 lg:row-start-3 lg:row-end-4
       lg:mr-0
       md:mb-10;
 
-    .service-areas-content-title {
-      @apply mb-2 text-2xl font-bold text-white
-        lg:text-2xl
-        md:text-lg
-        sm:text-base;
+    &::-webkit-scrollbar {
+      width: 0.5em;
     }
 
-    .service-areas-content-text {
-      @apply text-lg leading-relaxed text-white
-        lg:text-2xl lg:leading-relaxed
-        md:text-base md:leading-relaxed
-        sm:text-sm sm:leading-relaxed;
+    &::-webkit-scrollbar-track {
+      @apply bg-gray-50 bg-opacity-10 rounded-full;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply bg-gray-50 rounded-full;
+    }
+
+    * {
+      @apply text-white;
+    }
+
+    h3 {
+      @apply text-3xl font-bold text-white
+        md:text-xl;
+    }
+
+    .city_scroll_list_title {
+      @apply mt-6 mb-2 text-xl font-bold text-white block
+        md:text-lg;
+    }
+
+    li {
+      @apply block my-0.5 text-sm;
+      a {
+        @apply underline;
+      }
+    }
+
+    .city_scroll_list_local_phone {
+      @apply font-bold mt-5 block;
+
+      .footer-address {
+        @apply font-medium text-sm block;
+
+        &:first-of-type {
+          @apply -mt-4;
+        }
+
+        &:last-of-type {
+          @apply -mt-8;
+        }
+      }
+    }
+
+    .city_scroll_list_footer {
+      @apply mb-6 mt-8;
+
+      a {
+        @apply inline-block px-6 py-3 font-semibold text-white no-underline rounded-md cursor-pointer bg-primary hover:opacity-90 text-center;
+      }
     }
   }
 }
