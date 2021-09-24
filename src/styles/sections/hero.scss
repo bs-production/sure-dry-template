@@ -46,13 +46,14 @@
   }
 
   .logo-container {
-    @apply col-start-2 col-end-3 row-start-3 row-end-5 py-14 opacity-30 lg:py-8
-      lg:col-end-4
-      md:row-start-4 md:row-end-5 md:col-end-3;
+    @apply col-start-2 col-end-3 row-start-3 row-end-5 py-8 lg:py-8 flex justify-between space-x-20 mr-20 
+      lg:col-end-4 lg:mr-0
+      md:row-start-4 md:row-end-5 md:col-end-3
+      sm:space-x-6;
 
-    .text-placeholder {
-      @apply text-xl font-black
-        lg:text-center;
+    img {
+      @apply h-20 w-auto
+        sm:h-12;
     }
   }
 
