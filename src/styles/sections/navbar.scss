@@ -20,8 +20,8 @@
   @screen xl {
     grid-template-columns:
       minmax(theme("spacing.8"), auto)
-      4fr
-      10fr
+      3fr
+      12fr
       // this translates to 44fr and 55fr respectively
       minmax(theme("spacing.8"), auto);
   }
