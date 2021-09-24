@@ -26,6 +26,15 @@
       minmax(theme("spacing.8"), auto);
   }
 
+  @screen md {
+    grid-template-columns:
+      minmax(theme("spacing.8"), auto)
+      6fr
+      12fr
+      // this translates to 44fr and 55fr respectively
+      minmax(theme("spacing.8"), auto);
+  }
+
   .banner {
     @apply col-start-3 col-end-5 row-start-1 row-end-2
       xl:col-start-1 xl:col-end-5;
