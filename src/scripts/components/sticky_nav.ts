@@ -74,9 +74,23 @@ class StickyNav {
       document.querySelector<HTMLElement>("#silo-container");
 
     if (siloContainer) {
+      const head = document.head || document.getElementsByTagName("head")[0];
+      const styles = document.createElement("style");
+
+      head.appendChild(styles);
+      styles.type = "text/css";
+
       const defaultTopStyle = 16;
       const navHeight = 72;
-      siloContainer.style.top = `${defaultTopStyle + navHeight}px`;
+      const css = `
+        @media (min-width: 1023px) {
+          #silo-container {
+            top: ${defaultTopStyle + navHeight}px !important;
+          }
+        }
+      `;
+
+      styles.appendChild(document.createTextNode(css));
     }
   }
 
