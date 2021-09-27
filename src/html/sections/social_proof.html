@@ -1,9 +1,23 @@
 <section class="social-proof space-section">
   <div class="social-proof-bg-container">
-    <img
-      src="../../assets/images/social_proof/people.jpg"
-      class="object-cover- social-proof-bg img"
-    />
+    <picture>
+      <source
+        srcset="
+          ../../../prod/optimized_images/home/social_people/social_people.opt.avif
+        "
+        type="image/avif"
+      />
+      <source
+        srcset="
+          ../../../prod/optimized_images/home/social_people/social_people.opt.webp
+        "
+        type="image/webp"
+      />
+      <img
+        class="object-cover- social-proof-bg img"
+        src="../../../prod/optimized_images/home/social_people/social_people.opt.jpg"
+      />
+    </picture>
     <div class="social-proof-bg-overlay"></div>
   </div>
 

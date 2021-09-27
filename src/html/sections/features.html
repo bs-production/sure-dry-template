@@ -4,14 +4,41 @@
     <div class="features-card-bg-reset"></div>
     <div class="features-card">
       <div class="featured-card-background-image">
-        <img class="object-cover- img" src="../../assets/images/noise.png" />
+        <picture>
+          <source
+            srcset="../../../prod/optimized_images/general/noise/noise.opt.avif"
+            type="image/avif"
+          />
+          <source
+            srcset="../../../prod/optimized_images/general/noise/noise.opt.webp"
+            type="image/webp"
+          />
+          <img
+            class="object-cover- img"
+            src="../../../prod/optimized_images/general/noise/noise.opt.jpg"
+          />
+        </picture>
       </div>
 
       <div class="feautures-card-main-image">
-        <img
-          class="object-cover- img"
-          src="../../assets/images/features/company_people.jpg"
-        />
+        <picture>
+          <source
+            srcset="
+              ../../../prod/optimized_images/home/company-people/company_people.opt.avif
+            "
+            type="image/avif"
+          />
+          <source
+            srcset="
+              ../../../prod/optimized_images/home/company-people/company_people.opt.webp
+            "
+            type="image/webp"
+          />
+          <img
+            class="object-cover- img"
+            src="../../../prod/optimized_images/home/company-people/company_people.opt.jpg"
+          />
+        </picture>
       </div>
 
       <div class="featured-card-content">
