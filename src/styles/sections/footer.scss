@@ -23,6 +23,10 @@
         @apply text-3xl font-bold;
         color: #231f20;
       }
+
+      .footer-address {
+        @apply pt-4 text-sm opacity-90;
+      }
     }
 
     .block {
