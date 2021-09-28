@@ -72,7 +72,7 @@
     }
 
     li {
-      @apply block my-0.5 text-sm;
+      @apply block py-[5px] ml-4 text-sm;
       a {
         @apply underline;
       }
