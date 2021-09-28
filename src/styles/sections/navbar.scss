@@ -1,6 +1,30 @@
 @import "../utils/calculate_fraction_width.func.scss";
 @import "../utils/breakpoints.vars.scss";
 
+/* Mobile call button and icon */
+// .navigation-layout .banner-text .cta .cta-text-small a {
+//   padding: 0.5rem 1rem;
+//   display: flex;
+//   gap: 0.5rem;
+//   flex-direction: row;
+// }
+// .navigation-layout .banner-text .cta .cta-text-small .phone {
+//   margin-bottom: 0.05rem;
+//   width: 1.5rem;
+// }
+// /* Hide Open Now on mobile */
+// @media (max-width: 639px) {
+//   .navigation-layout .banner-text .closing-at-container,
+//   .navigation-layout .banner-text .separator {
+//     display: none;
+//   }
+//   /* Center serving text */
+//   .navigation-layout .banner-text .serving {
+//     text-align: center;
+//     width: 100%;
+//   }
+// }
+
 .navigation-layout {
   @apply relative;
   display: grid;
@@ -71,12 +95,12 @@
 
     .separator {
       @apply px-4
-        sm:px-1;
+        sm:hidden;
     }
 
     .serving {
       @apply mr-12
-        sm:mr-2 sm:text-center;
+        sm:mr-2 sm:text-center sm:flex-1;
     }
 
     .cta {
@@ -93,23 +117,23 @@
           sm:flex;
 
         a {
-          @apply items-center flex-col whitespace-nowrap
+          @apply items-center flex
             sm:flex;
         }
 
         .phone {
-          @apply mb-2 w-4;
+          @apply mr-2 w-5;
         }
       }
 
       a {
         @apply px-5 py-2 block
-          sm:px-3;
+          sm:px-3 sm:py-3;
       }
     }
 
     .closing-at-container {
-      @apply sm:text-center;
+      @apply sm:hidden;
 
       .closing-at {
         @apply sm:hidden;
