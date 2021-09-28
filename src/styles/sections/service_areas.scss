@@ -62,6 +62,12 @@
         md:text-xl;
     }
 
+    .city_scroll_list_container {
+      .city_scroll_list {
+        margin-left: 0px !important;
+      }
+    }
+
     .city_scroll_list_title {
       &:first-child {
         @apply mt-2;
@@ -72,7 +78,7 @@
     }
 
     li {
-      @apply block py-[5px] ml-4 text-sm;
+      @apply block py-[5px] ml-5 text-sm;
       a {
         @apply underline;
       }
