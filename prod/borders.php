@@ -205,13 +205,14 @@
     </footer>
     
     <script>
-        // Replace header service with "we service" token if it's not empty
-       (() => {
-            var ws = '[[city_serve_token]]';
-            if (ws && ws == '[[city_serve_token]]') {
-                document.querySelector('.serving').innerHTML = ws.replace(/(<\/?h)([0-6])>/g, '');
-            }
-       })();
+      // Replace header service with "we service" token if it's not empty
+      (() => {
+        var ws = '[[city_serve_token]]';
+        
+        if (ws && ws == '[[city_serve_token]]') {
+          document.querySelector('.serving').innerHTML = ws.replace(/(<\/?h)([0-6])>/g, '');
+        }
+      })();
     </script>
 
     <!-- Selected scripts -->
@@ -221,8 +222,6 @@
     <? if( ($siteConfig->isCityPage) || (stristr($thePage,"meet-the-team")) || (strpos($thePage, 'confirmation')) ): ?>
     [[custom_core_v3_9_js]]
     <? endif; ?>
-    
-    
     <script defer src="https://connect.podium.com/widget.js#API_TOKEN=abfc03c0-6d23-4ce4-b9b9-b284af5de0ce" id="podium-widget" data-api-token="abfc03c0-6d23-4ce4-b9b9-b284af5de0ce"></script> 
   </body>
 </html>
