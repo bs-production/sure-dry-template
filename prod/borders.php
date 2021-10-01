@@ -215,7 +215,6 @@
       })();
     </script>
 
-    <!-- Selected scripts -->
     [[bottom-inject]]
 
     <!-- City Page core scripts -->
