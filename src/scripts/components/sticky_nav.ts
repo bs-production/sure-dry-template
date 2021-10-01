@@ -272,31 +272,41 @@ class StickyNav {
       this.parentClone.classList.contains('sticky-nav-show"') ||
       this.parentClone.classList.contains("sticky-nav-show-partial");
 
-    // Check partials
     if (this.currentTop >= realSupernavOffsetTop + realSupernavHeight) {
+      /**
+       * The nav has moved far enough for it
+       * to show either fully or partially
+       */
       if (isFastEnough && containsPartialClasses) {
+        /**
+         * The nav is moving fast enough and has
+         * been initialized.
+         */
         if (this.previousTop <= this.currentTop) {
-          // partial show
+          /**
+           * Scrolling down and partially showing the navigation
+           */
           this.parentClone.classList.add("sticky-nav-show-partial");
           this.parentClone.classList.remove("sticky-nav-show");
         } else {
-          // full show
+          /**
+           * Scrolling up and fully showing the navigation
+           */
           this.parentClone.classList.add("sticky-nav-show");
           this.parentClone.classList.remove("sticky-nav-show-partial");
         }
-      } else if (
-        (!containsPartialClasses && isFastEnough) ||
-        (!containsPartialClasses && !isFastEnough)
-      ) {
-        if (this.previousTop <= this.currentTop) {
-          // partial show
-          this.parentClone.classList.add("sticky-nav-show-partial");
-        } else {
-          // full show
-          this.parentClone.classList.add("sticky-nav-show");
-        }
+      } else if (!containsPartialClasses) {
+        /**
+         * The nav has NOT been initialzied
+         * At the very least this branch requires a partial show
+         */
+        this.parentClone.classList.add("sticky-nav-show-partial");
       }
     } else {
+      /**
+       * The navigation is at the top and should not show
+       * at all
+       */
       this.parentClone.classList.remove("sticky-nav-show-partial");
       this.parentClone.classList.remove("sticky-nav-show");
     }
