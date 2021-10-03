@@ -64,6 +64,10 @@ class StickyNavAlt {
         transition: all 150ms ease-in-out;
       }
 
+      .navigation-clone .banner-text {
+        pointer-events: auto;
+      }
+
       .navigation-clone .logo-container {
         opacity: 0;
         transition: all 150ms ease-in-out;
