@@ -6,7 +6,7 @@
  * to handle the nav even the styling.
  *
  * This needs to be imported before the actual super nav
- * to allow the script to also accound for the cloned
+ * to allow the script to also account for the cloned
  * element
  *
  * PROS:
@@ -61,13 +61,11 @@ class StickyNavAlt {
 
       .navigation-clone .supernav {
         opacity: 0;
-        transform: translateY(-25px);
         transition: all 150ms ease-in-out;
       }
 
       .navigation-clone .logo-container {
         opacity: 0;
-        transform: translateY(-25px);
         transition: all 150ms ease-in-out;
       }
 
@@ -79,12 +77,10 @@ class StickyNavAlt {
 
       .sticky-nav-show.navigation-clone .supernav {
         opacity: 1;
-        transform: translateY(0px);
       }
 
       .sticky-nav-show.navigation-clone .logo-container {
         opacity: 1;
-        transform: translateY(0px);
       }
     `;
 
