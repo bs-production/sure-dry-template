@@ -67,7 +67,7 @@
       }
 
       .featured-card-button {
-        @apply row-start-2 col-start-1 px-11 py-4 text-white z-10 hover:bg-primary cursor-pointer
+        @apply row-start-2 col-start-1 px-11 py-4 text-white z-10 hover:bg-primary cursor-pointer block
           lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4 lg:py-3 lg:px-8
           sm:px-4 sm:py-3;
         background-color: #231f20;
