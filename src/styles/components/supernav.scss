@@ -78,15 +78,16 @@
   }
 
   .level-1.small {
-    @apply hidden absolute bg-white rounded left-2 right-2 bottom-0 transform translate-y-full flex-col transition duration-500 shadow-2xl ring-1 ring-gray-900 ring-opacity-10;
+    @apply opacity-0 absolute bg-white pointer-events-none rounded left-2 right-2 bottom-0 transform translate-y-full flex-col transition duration-150 shadow-2xl ring-1 ring-gray-900 ring-opacity-10
+      md:translate-y-[calc(100%-25px)];
 
     &.show {
-      @apply flex;
+      @apply flex opacity-100 translate-y-full pointer-events-auto;
     }
 
     &.nest {
       .level-2 {
-        @apply opacity-0 pointer-events-none transform -translate-y-5;
+        @apply opacity-0 pointer-events-none transform -translate-y-5 max-h-[calc(100vh-75%)] overflow-auto;
 
         &.show {
           @apply opacity-100 pointer-events-auto transform translate-y-0;
