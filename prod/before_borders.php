@@ -10,6 +10,7 @@
     private $thePage;
     private $cmsPageData;
     private $siteTokens;
+    private $proxy = "https://gh-proxy.jsiwicki.workers.dev/?url=";
 
     /**
      * Collections
@@ -50,7 +51,13 @@
     );
     private $devLinks = array(
       // JS files
-      "dev_tools.js" => "https://cdn.treehouseinternetgroup.com/cms_images/101/dev_tools.js"
+      "home.js" => "https://raw.githubusercontent.com/bs-production/sure-dry-template/master/prod/home.js",
+      "content.js" => "https://raw.githubusercontent.com/bs-production/sure-dry-template/master/prod/content.js",
+      "dev_tools.js" => "https://raw.githubusercontent.com/bs-production/sure-dry-template/master/prod/dev_tools.js",
+
+      // Css files
+      "homepage.css" => "https://raw.githubusercontent.com/bs-production/sure-dry-template/master/prod/homepage.css",
+      "content.css" => "https://raw.githubusercontent.com/bs-production/sure-dry-template/master/prod/content.css"
     );
     private $prodLinks = array(
       // Css files
@@ -85,7 +92,8 @@
      */
     public $pageType;
     public $isCityPage;
-    public $isDevelopment;
+    public $isDev;
+    public $isTest;
 
 
     /**
@@ -107,7 +115,8 @@
 
       // Set helpers
       $this->isCityPage = (strpos($thePage, 'service-area') !== false) && (strpos($thePage, '/') !== false);
-      $this->isDevelopment = (!empty($_GET['test']) && $_GET['test'] == 1);
+      $this->isDev = (!empty($_GET['dev_template']) && $_GET['dev_template'] == 1) || (!empty($_GET['dev_content']) && $_GET['dev_content'] == 1);
+      $this->isTest = (!empty($_GET['test']) && $_GET['test'] == 1);
 
       $this->handleSetters();
       $this->handleSwitches();
@@ -197,14 +206,23 @@
       // Page type based injection
       switch($this->pageType) { 
         case "HOME": {
-          $topData .= $this->generateLinkTag($this->prodLinks['homepage.css']);
+          if($this->isDev) {
+            $topData .= $this->generateLinkTag($this->proxy . $this->devLinks['homepage.css']);
+          } else {
+            $topData .= $this->generateLinkTag($this->prodLinks['homepage.css']);
+          }
+          
           $topData .= $this->generateScriptTag($this->prodLinks['embla-carousel.js']);
           break;
         }
 
         
         case "CONTENT": {
-          $topData .= $this->generateLinkTag($this->prodLinks['content.css']);
+          if($this->isDev) {
+            $topData .= $this->generateLinkTag($this->proxy . $this->devLinks['content.css']);
+          } else {
+            $topData .= $this->generateLinkTag($this->prodLinks['content.css']);
+          }
 
           // Style and script fixes
           if(strpos($this->thePage, 'free-estimate') !== false) {
@@ -238,7 +256,11 @@
          * to treat it as a CONTENT type
          */
         default: {
-          $topData .= $this->generateLinkTag($this->prodLinks['content.css']);
+          if($this->isDev) {
+            $topData .= $this->generateLinkTag($this->proxy . $this->devLinks['content.css']);
+          } else {
+            $topData .= $this->generateLinkTag($this->prodLinks['content.css']);
+          }
         }
       }
 
@@ -251,7 +273,11 @@
       // Page type based injection
       switch($this->pageType) { 
         case "HOME": {
-          $bottomData .= $this->generateScriptTag($this->prodLinks['home.js']);
+          if($this->isDev) {
+            $bottomData .= $this->generateScriptTag($this->proxy . $this->devLinks['home.js']);
+          } else {
+            $bottomData .= $this->generateScriptTag($this->prodLinks['home.js']);
+          }
           break;
         }
 
@@ -261,13 +287,17 @@
          */
         case "CONTENT":
         default: {
-          $bottomData .= $this->generateScriptTag($this->prodLinks['content.js']);
+          if($this->isDev) {
+            $bottomData .= $this->generateScriptTag($this->proxy . $this->devLinks['content.js']);
+          } else {
+            $bottomData .= $this->generateScriptTag($this->prodLinks['content.js']);
+          }
         }
       }
 
       // Insert dev_tools reset
-      if($this->isDevelopment) {
-        $bottomData .= $this->generateScriptTag($this->devLinks['dev_tools.js']);
+      if($this->isTest) {
+        $bottomData .= $this->generateScriptTag($this->proxy . $this->devLinks['dev_tools.js']);
       }
 
       $this->siteTokens['[[bottom-inject]]'] = $bottomData;
