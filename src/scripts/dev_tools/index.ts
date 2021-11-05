@@ -60,7 +60,7 @@ class DevTools {
 }
 
 try {
-  new DevTools();
+  // new DevTools();
 } catch (e) {
   console.error(`Could not init Devtools: ${e}`);
 }
