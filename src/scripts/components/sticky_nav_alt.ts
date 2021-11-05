@@ -37,7 +37,8 @@ class StickyNavAlt {
 
   constructor() {
     this._createClassDefinitions();
-    this._createCompansatingStyles();
+    // this._createCompansatingStyles();
+    this._siloFixes();
 
     this._cloneNav();
 
@@ -136,6 +137,64 @@ class StickyNavAlt {
     }
   }
 
+  private _siloFixes() {
+    const defaultTopStyle = 18;
+    const bannerHeight = document
+      .querySelector(".banner")
+      .getBoundingClientRect().height;
+    const supernavHeight = document
+      .querySelector(".supernav")
+      .getBoundingClientRect().height;
+    const viewportHeight = window.innerHeight;
+
+    let stylesToInsert = ``;
+
+    /**
+     * SILO
+     * ========
+     */
+    stylesToInsert += `
+      @media (min-width: 1023px) {
+        #silo-container {
+          top: ${defaultTopStyle + bannerHeight}px !important;
+          max-height: ${
+            viewportHeight - (defaultTopStyle * 2 + bannerHeight)
+          }px !important;
+          transition: all 125ms ease-in-out;
+          overflow: overlay;
+        }
+
+
+        #silo-container.push-down {
+          top: ${defaultTopStyle + bannerHeight + supernavHeight}px !important;
+          max-height: ${
+            viewportHeight -
+            (defaultTopStyle * 2 + bannerHeight + supernavHeight)
+          }px !important;
+        }
+      }
+
+
+      @media (min-width: 1279px) {
+        #silo-container {
+          top: ${defaultTopStyle}px !important;
+        }
+      }
+    `;
+
+    if (this.styleCompansationDefRef) {
+      this.styleCompansationDefRef.innerHTML = stylesToInsert;
+    } else {
+      this.styleCompansationDefRef = document.createElement("style");
+      this.styleCompansationDefRef.type = "text/css";
+      this.styleCompansationDefRef.innerHTML = stylesToInsert;
+
+      document
+        .getElementsByTagName("head")[0]
+        .appendChild(this.styleCompansationDefRef);
+    }
+  }
+
   private _cloneNav() {
     const bodyElement = document.body;
     const navigationElement = document.querySelector(".navigation-layout");
@@ -154,6 +213,8 @@ class StickyNavAlt {
   }
 
   private _autoHideNavigation() {
+    const silo = document.querySelector("#silo-container");
+
     this.currentTop = window.scrollY;
     const isFastEnough =
       Math.abs(this.previousTop - this.currentTop) > this.scrollThreshold;
@@ -163,12 +224,15 @@ class StickyNavAlt {
       if (isFastEnough) {
         if (this.previousTop >= this.currentTop) {
           this.navClone.classList.add("sticky-nav-show");
+          silo?.classList.add("push-down");
         } else {
           this.navClone.classList.remove("sticky-nav-show");
+          silo?.classList.remove("push-down");
         }
       }
     } else {
       this.navClone.classList.remove("sticky-nav-show");
+      silo?.classList.remove("push-down");
     }
 
     this.previousTop = this.currentTop;
@@ -178,6 +242,7 @@ class StickyNavAlt {
     // On mobile this will also fire on scrolling since the viewport height may change
     if (this.viewportWidth !== window.innerWidth) {
       this._createClassDefinitions();
+      this._siloFixes();
       this.viewportWidth = window.innerWidth;
     }
   }
